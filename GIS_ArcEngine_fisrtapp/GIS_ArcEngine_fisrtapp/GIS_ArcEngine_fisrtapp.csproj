@@ -108,6 +108,7 @@
       <DependentUpon>FormMerge.cs</DependentUpon>
     </Compile>
     <Compile Include="function\GeoUtil.cs" />
+    <Compile Include="function\ToolEnum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="裁剪.cs">

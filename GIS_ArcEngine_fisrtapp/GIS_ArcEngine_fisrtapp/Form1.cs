@@ -19,6 +19,7 @@ namespace GIS_ArcEngine_fisrtapp
 {
     public partial class Form1 : Form
     {
+        ToolEnum tool = ToolEnum.Pointer;
         public Form1()
         {
             InitializeComponent();
@@ -122,9 +123,63 @@ namespace GIS_ArcEngine_fisrtapp
 
         }
 
-        private void point绘制点ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButton4_Click(object sender, EventArgs e)
         {
+            tool = ToolEnum.PointBuffer;
+            //axMapControl1.MousePointer = ESRI.ArcGIS.Controls
+        }
 
+        public void createPointBuffer()
+        {
+            // ITopologicalOperator  ===>  IGeometry as ITopologicalOperator
+            IGeometry geometry = axMapControl1.TrackLine();  // IRubberBand   ----   橡皮筋
+            ITopologicalOperator topoOper = geometry as ITopologicalOperator;
+            IPolygon geoPolygon = topoOper.Buffer(1) as IPolygon;
+            // IElement
+
+            // 创建符号
+            ISimpleLineSymbol pSimpleLineSymbol = new SimpleLineSymbol();
+            pSimpleLineSymbol.Width = 2;
+            pSimpleLineSymbol.Style = esriSimpleLineStyle.esriSLSSolid;
+            //pSimpleLineSymbol.Color = GetRGBColor(46, 24, 63);// Common.GetRGBColor(46, 24, 63);
+
+            ISimpleFillSymbol pSimpleFillSymbol = new SimpleFillSymbol();
+            //pSimpleFillSymbol.Color = GetRGBColor(11, 200, 145);
+            pSimpleFillSymbol.Outline = pSimpleLineSymbol;
+            // 创建Element并赋值图形和符号
+            IFillShapeElement pPolygonElement = new PolygonElement() as IFillShapeElement;
+            IElement pElement = (IElement)pPolygonElement;
+            pElement.Geometry = geoPolygon;
+            pPolygonElement.Symbol = pSimpleFillSymbol;
+
+            // 添加到IGraphicsContainer容器
+            IGraphicsContainer pGraphicsContainer = (IGraphicsContainer)axMapControl1.Map;
+            pGraphicsContainer.AddElement((IElement)pPolygonElement, 0);
+            axMapControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGraphics, null, null);
+        }
+
+        private void axMapControl1_OnMouseDown(object sender, ESRI.ArcGIS.Controls.IMapControlEvents2_OnMouseDownEvent e)
+        {
+            switch (tool)
+            {
+                case ToolEnum.PointBuffer:
+                    //缓冲区代码
+                    this.createPointBuffer();
+                    break;
+                case ToolEnum.ZoomIn: // 放大
+                    // 放大代码
+                    break;
+                case ToolEnum.ZoomOut:
+                    // 缩小代码
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            tool = ToolEnum.Pointer;
         }
     }
 }
