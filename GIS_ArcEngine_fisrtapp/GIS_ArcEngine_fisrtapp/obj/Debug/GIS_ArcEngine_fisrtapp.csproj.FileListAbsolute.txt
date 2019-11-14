@@ -22,15 +22,3 @@ F:\GitHub\data\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEn
 F:\GitHub\data\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.Properties.Resources.resources
 F:\GitHub\data\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.Clip_Window.resources
 F:\GitHub\data\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.csproj.GenerateResource.Cache
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\bin\Debug\GIS_ArcEngine_fisrtapp.exe.config
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.exe
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.pdb
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\bin\Debug\GIS_ArcEngine_fisrtapp.exe
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\bin\Debug\GIS_ArcEngine_fisrtapp.pdb
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.csprojResolveAssemblyReference.cache
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.Form1.resources
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.FormDissolve.resources
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.FormMerge.resources
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.Properties.Resources.resources
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.Clip_Window.resources
-C:\Users\；\Desktop\jj\GIS_ArcEngine_fisrtapp\GIS_ArcEngine_fisrtapp\obj\Debug\GIS_ArcEngine_fisrtapp.csproj.GenerateResource.Cache

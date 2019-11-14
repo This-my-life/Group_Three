@@ -97,6 +97,11 @@ namespace GIS_ArcEngine_fisrtapp
 
         private void face面ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tool = ToolEnum.DrawPolygon;
+        }
+
+        public void createDrawPolygon()
+        {
             // 创建图形
             IPolygon pPolygon = new Polygon() as IPolygon;
             IRubberBand pRubberBand = new RubberPolygon();
@@ -120,7 +125,6 @@ namespace GIS_ArcEngine_fisrtapp
             IGraphicsContainer pGraphicsContainer = (IGraphicsContainer)axMapControl1.Map;
             pGraphicsContainer.AddElement((IElement)pPolygonElement, 0);
             axMapControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGraphics, null, null);
-
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -162,6 +166,10 @@ namespace GIS_ArcEngine_fisrtapp
         {
             switch (tool)
             {
+                case ToolEnum.DrawPolygon:
+                    //添加面元素
+                    this.createDrawPolygon();
+                    break;
                 case ToolEnum.PointBuffer:
                     //缓冲区代码
                     this.createPointBuffer();
@@ -180,6 +188,74 @@ namespace GIS_ArcEngine_fisrtapp
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             tool = ToolEnum.Pointer;
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sMxdFileNmae = axMapControl1.DocumentFilename;//调用地图控件自身的方法来获取mxd文档的名称
+                IMapDocument pMapDocument = new MapDocument();//
+                if (sMxdFileNmae != null && axMapControl1.CheckMxFile(sMxdFileNmae))//不等于空且检查文件是否损坏
+                {
+                    if (pMapDocument.get_IsReadOnly(sMxdFileNmae))//如果文件为只读状态
+                    {
+                        MessageBox.Show("地图当前为只读状态，不能保存！");
+                        pMapDocument.Close();
+                        return;//结束方法
+                    }
+                }
+                else
+                {
+                    SaveFileDialog pSaveFileDiaLog = new System.Windows.Forms.SaveFileDialog();//创建一个保存文件对话框
+                    pSaveFileDiaLog.Title = "请选择保存的路径";//标题
+                    pSaveFileDiaLog.Filter = "ArcMap文档(*.mxd)|*.mxd|ArcMap模板(*.mxt)|*.mxt";//Filter过滤  过滤除指定格式外文件
+                    pSaveFileDiaLog.OverwritePrompt = true;//如果已存在文件是否覆盖
+                    pSaveFileDiaLog.RestoreDirectory = true;//保存进程目录之后 是否打开
+                    if (pSaveFileDiaLog.ShowDialog() == DialogResult.OK)//确定
+                    {
+                        sMxdFileNmae = pSaveFileDiaLog.FileName;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                pMapDocument.New(sMxdFileNmae);//创建一个工作空间
+                pMapDocument.ReplaceContents(axMapControl1.Map as IMxdContents);//通过axMapControl1.Map获取IMxdContents来更新文档内容
+                pMapDocument.Save(pMapDocument.UsesRelativePaths, true);//已当前目录来保存
+                pMapDocument.Close();
+                MessageBox.Show("保存文档成功");
+            }
+            catch (Exception ex)
+            {//存放错误信息弹出错误信息
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void saveASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog pSaveFileDiaLog = new System.Windows.Forms.SaveFileDialog();
+                pSaveFileDiaLog.Title = "另存为";
+                pSaveFileDiaLog.Filter = "ArcMap文档(*.mxd)|*.mxd|ArcMap模板(*.mxt)|*.mxt";
+                pSaveFileDiaLog.RestoreDirectory = true;
+                if (pSaveFileDiaLog.ShowDialog() == DialogResult.OK)
+                {
+                    string sFilePath = pSaveFileDiaLog.FileName;
+                    IMapDocument pMapDocument = new MapDocument();
+                    pMapDocument.New(sFilePath);
+                    pMapDocument.ReplaceContents(axMapControl1.Map as IMxdContents);
+                    pMapDocument.Save(true, true);
+                    pMapDocument.Close();
+                    MessageBox.Show("另存为成功！");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

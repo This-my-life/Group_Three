@@ -14,5 +14,6 @@ namespace GIS_ArcEngine_fisrtapp.function
         Pan,
         Full,
         PointBuffer,
+        DrawPolygon,
     }
 }
