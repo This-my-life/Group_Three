@@ -107,8 +107,31 @@
     <Compile Include="FormMerge.Designer.cs">
       <DependentUpon>FormMerge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_buffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_buffer.Designer.cs">
+      <DependentUpon>Form_buffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_erase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_erase.Designer.cs">
+      <DependentUpon>Form_erase.cs</DependentUpon>
+    </Compile>
     <Compile Include="function\GeoUtil.cs" />
+    <Compile Include="function\ToolBtn.cs" />
     <Compile Include="function\ToolEnum.cs" />
+    <Compile Include="function\Tools.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Overlap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overlap.Designer.cs">
+      <DependentUpon>Overlap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="裁剪.cs">
@@ -126,6 +149,15 @@
     <EmbeddedResource Include="FormMerge.resx">
       <DependentUpon>FormMerge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_buffer.resx">
+      <DependentUpon>Form_buffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_erase.resx">
+      <DependentUpon>Form_erase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overlap.resx">
+      <DependentUpon>Overlap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -138,6 +170,7 @@
     <EmbeddedResource Include="裁剪.resx">
       <DependentUpon>裁剪.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\GIS_ArcEngine_fisrtapp.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -147,9 +180,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="resource\GIS\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\GIS_ArcEngine_fisrtapp.exe" />
+    <Content Include="bin\Debug\GIS_ArcEngine_fisrtapp.pdb" />
+    <Content Include="resource\GIS\A_Expand.jpg" />
+    <Content Include="resource\GIS\A_Identify.jpg" />
+    <Content Include="resource\GIS\A_MeasureArea.jpg" />
+    <Content Include="resource\GIS\A_MeasureDistance.jpg" />
+    <Content Include="resource\GIS\A_Pan.jpg" />
+    <Content Include="resource\GIS\A_Shrink.jpg" />
+    <Content Include="resource\GIS\A_toggle.jpg" />
+    <Content Include="resource\GIS\A_TogglePeek.jpg" />
+    <Content Include="resource\GIS\Expand.jpg" />
+    <Content Include="resource\GIS\FullExtent.jpg" />
+    <Content Include="resource\GIS\Identify.jpg" />
+    <Content Include="resource\GIS\MeasureArea.jpg" />
+    <Content Include="resource\GIS\MeasureDistance.jpg" />
+    <Content Include="resource\GIS\Pan.jpg" />
+    <Content Include="resource\GIS\Refresh.jpg" />
+    <Content Include="resource\GIS\RemoveTheme.jpg" />
+    <Content Include="resource\GIS\Shrink.jpg" />
+    <Content Include="resource\GIS\Thematic.jpg" />
+    <Content Include="resource\GIS\toggle.jpg" />
+    <Content Include="resource\GIS\TogglePeek.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

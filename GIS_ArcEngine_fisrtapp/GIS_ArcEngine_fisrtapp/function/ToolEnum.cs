@@ -15,5 +15,6 @@ namespace GIS_ArcEngine_fisrtapp.function
         Full,
         PointBuffer,
         DrawPolygon,
+        DrawPolyline,
     }
 }

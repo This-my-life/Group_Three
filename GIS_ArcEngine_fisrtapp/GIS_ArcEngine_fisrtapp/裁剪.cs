@@ -93,13 +93,13 @@ namespace GIS_ArcEngine_fisrtapp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog OpenFile = new OpenFileDialog();
-            OpenFile.Filter = "shp文件(*.shp)|*.shp";
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            SaveFileDialog SaveFile = new SaveFileDialog();
+            SaveFile.Filter = "shp文件(*.shp)|*.shp";
+            if (SaveFile.ShowDialog() == DialogResult.OK)
             {
-                if (OpenFile.FileName != null || OpenFile.FileName != "")
+                if (SaveFile.FileName != null || SaveFile.FileName != "")
                 {
-                    textBox3.Text = OpenFile.FileName;
+                    textBox3.Text = SaveFile.FileName;
                 }
             }
             else
